@@ -37,6 +37,7 @@ int main(int argc, char* argv[]) {
 	while(true) {
 
 		char sbuf[100];
+		//memset(sbuf, 0, 100); //to clean the buffer, usually done on server side?
 		printf("Message here >>");
 		fgets(sbuf, 100, stdin); //buffer,size and input
 		// socket to use, how many bytes to send out, flag = 0, remote address created earlier, size of my remote address.

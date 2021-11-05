@@ -18,6 +18,7 @@ int main(int argc, char* argv[]) {
 		printf("Winsock API cannot be started \n");
 		return 1;
 	}
+
 	printf("Winsock API ready \n");
 	SOCKET s = socket(AF_INET, SOCK_DGRAM, 0);
 
@@ -31,7 +32,7 @@ int main(int argc, char* argv[]) {
 	sa.sin_family = AF_INET;
 	sa.sin_addr.s_addr = inet_addr(argv[1]);
 	sa.sin_port = htons(atoi(argv[2]));
-	printf("Udp client ready to go");
+	printf("Udp client ready to go\n");
 
 	while(true) {
 

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <WinSock2.h>
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
 	
 	if (argc != 3) { //command "ip" "port"
 
@@ -31,21 +31,40 @@ int main(int argc, char* argv[]) {
 	SOCKADDR_IN sa;
 	sa.sin_family = AF_INET;
 	sa.sin_addr.s_addr = inet_addr(argv[1]);
-	sa.sin_port = htons(atoi(argv[2]));
+	sa.sin_port = htons(atoi(argv[2])); //htons() host to network address, atoi() string to int
 	printf("Udp client ready to go\n");
 
 	while(true) {
 
 		char sbuf[100];
-		//memset(sbuf, 0, 100); //to clean the buffer, usually done on server side?
 		printf("Message here >>");
 		fgets(sbuf, 100, stdin); //buffer,size and input
 		// socket to use, how many bytes to send out, flag = 0, remote address created earlier, size of my remote address.
-		ret = sendto(s, sbuf, strlen(sbuf),0,(SOCKADDR *)&sa,sizeof(sa));
+		
+		int slen = strlen(sbuf);
+		sbuf[slen - 1] = '\0';
 
-		if (ret == SOCKET_ERROR) {
-			printf("Sendto failed\n");
+		if (strcmp(sbuf, "exit") == 0 || strcmp(sbuf, "EXIT") == 0) {
+			printf("Goodbye");
 			break;
 		}
-	}
+		
+		ret = sendto(s, sbuf, strlen(sbuf),0,(SOCKADDR*)&sa,sizeof(sa));
+		int fromlen = sizeof(sa);
+		memset(sbuf, 0, 100);
+		ret = recvfrom(s, sbuf, 100, 0, (SOCKADDR*)&sa, &fromlen);
+
+		if (ret > 0) {
+
+			printf("Server: %s\n", sbuf);
+		}
+
+		if (ret == SOCKET_ERROR) {
+			printf("Send to failed\n");
+			break;
+		}
+		
+	} //end of while
+	closesocket(s); //destroy the socket
+	WSACleanup();	//stop Winsock API
 }

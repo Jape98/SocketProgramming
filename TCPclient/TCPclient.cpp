@@ -41,18 +41,31 @@ int main(int argc, char *argv[]) {
 
 	printf("Server %s is connected\n", argv[1]);
 	
-	while (1) {
-		char sbuf[100];
-		printf("Message >> ");
-		fgets(sbuf, 100, stdin);
+
+	char sbuf[10000];
+	memset(sbuf, 0, 10000);
+	ret = recv(s, sbuf, 10000, 0);
+
+	while (ret > 0) {
+		printf("Server: %s\n", sbuf);
+		memset(sbuf, 0, 10000);
+		ret = recv(s, sbuf, 10000, 0);
+	}
+
+	/*
+	//while (1) {
+		char sbuf[10000]="GET /index.html HTTP/1.1\r\nHost: 192.168.73.144\r\nAccept: text/html\r\n\r\n";
+		//printf("Message >> ");
+		//fgets(sbuf, 100, stdin);
 		ret = send(s, sbuf, strlen(sbuf), 0);
-		ret = recv(s, sbuf, 100, 0);
+		ret = recv(s, sbuf, 10000, 0);
 
 		if (ret > 0) {
 			printf("Server :: %s\n", sbuf);
 		}
-	}
+	//}
 	
 	closesocket(s); //destroy the socket
 	WSACleanup();	//stop Winsock API
+	*/
 }

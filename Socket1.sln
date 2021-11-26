@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UDPclient", "Socket1\Socket1.vcxproj", "{866074F1-9645-4B0D-A676-A2E0AE9DB452}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UDPserver", "UDPserver\UDPserver.vcxproj", "{016AE7EB-A050-4321-AC27-ACFF9857BDB9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hostname", "Hostname\Hostname.vcxproj", "{B93A68BC-1F2E-47CD-BF7B-14507843578F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCPclient", "TCPclient\TCPclient.vcxproj", "{E8649F49-1BB3-48FA-B2AD-57273854329B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UDPclient", "UDPclient\UDPclient.vcxproj", "{0D0AC1E0-EEE9-4228-AB37-A565B77A868B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{866074F1-9645-4B0D-A676-A2E0AE9DB452}.Debug|x64.ActiveCfg = Debug|x64
-		{866074F1-9645-4B0D-A676-A2E0AE9DB452}.Debug|x64.Build.0 = Debug|x64
-		{866074F1-9645-4B0D-A676-A2E0AE9DB452}.Debug|x86.ActiveCfg = Debug|Win32
-		{866074F1-9645-4B0D-A676-A2E0AE9DB452}.Debug|x86.Build.0 = Debug|Win32
-		{866074F1-9645-4B0D-A676-A2E0AE9DB452}.Release|x64.ActiveCfg = Release|x64
-		{866074F1-9645-4B0D-A676-A2E0AE9DB452}.Release|x64.Build.0 = Release|x64
-		{866074F1-9645-4B0D-A676-A2E0AE9DB452}.Release|x86.ActiveCfg = Release|Win32
-		{866074F1-9645-4B0D-A676-A2E0AE9DB452}.Release|x86.Build.0 = Release|Win32
 		{016AE7EB-A050-4321-AC27-ACFF9857BDB9}.Debug|x64.ActiveCfg = Debug|x64
 		{016AE7EB-A050-4321-AC27-ACFF9857BDB9}.Debug|x64.Build.0 = Debug|x64
 		{016AE7EB-A050-4321-AC27-ACFF9857BDB9}.Debug|x86.ActiveCfg = Debug|Win32
@@ -51,6 +43,14 @@ Global
 		{E8649F49-1BB3-48FA-B2AD-57273854329B}.Release|x64.Build.0 = Release|x64
 		{E8649F49-1BB3-48FA-B2AD-57273854329B}.Release|x86.ActiveCfg = Release|Win32
 		{E8649F49-1BB3-48FA-B2AD-57273854329B}.Release|x86.Build.0 = Release|Win32
+		{0D0AC1E0-EEE9-4228-AB37-A565B77A868B}.Debug|x64.ActiveCfg = Debug|x64
+		{0D0AC1E0-EEE9-4228-AB37-A565B77A868B}.Debug|x64.Build.0 = Debug|x64
+		{0D0AC1E0-EEE9-4228-AB37-A565B77A868B}.Debug|x86.ActiveCfg = Debug|Win32
+		{0D0AC1E0-EEE9-4228-AB37-A565B77A868B}.Debug|x86.Build.0 = Debug|Win32
+		{0D0AC1E0-EEE9-4228-AB37-A565B77A868B}.Release|x64.ActiveCfg = Release|x64
+		{0D0AC1E0-EEE9-4228-AB37-A565B77A868B}.Release|x64.Build.0 = Release|x64
+		{0D0AC1E0-EEE9-4228-AB37-A565B77A868B}.Release|x86.ActiveCfg = Release|Win32
+		{0D0AC1E0-EEE9-4228-AB37-A565B77A868B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

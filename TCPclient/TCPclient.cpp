@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	printf("Server %s is connected\n", argv[1]);
-
+	
 	while (1) {
 		char sbuf[100];
 		printf("Message >> ");
@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
 			printf("Server :: %s\n", sbuf);
 		}
 	}
-
+	
 	closesocket(s); //destroy the socket
 	WSACleanup();	//stop Winsock API
 }

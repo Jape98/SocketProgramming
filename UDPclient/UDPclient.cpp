@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	WSADATA w;						
-	int ret = WSAStartup(MAKEWORD(2, 2), &w); //tai 0x00020002 makewor:in tilalle
+	int ret = WSAStartup(MAKEWORD(2, 2), &w);
 
 	if (ret != 0) {
 		printf("Winsock API cannot be started \n");
